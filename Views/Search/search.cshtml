@@ -1,0 +1,52 @@
+﻿@model List<Project.Models.Tutor>
+
+@{Layout = "~/Views/Shared/_Layout.cshtml";}
+
+<section class="alizarin">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">
+                <br><br><br>
+                <center><h1 id="sansarif">Available Tutors Are.</h1></center>
+                <center><h1 id="sansarif">Total @Model.Count Results Found.</h1></center>
+
+                <br><br><br>
+            </div>
+            <div class="col-sm-4">
+                <ul class="breadcrumb pull-right">
+                    <li><a href="~/Home/index">Home</a></li>
+                    <li class="active">Search</li>
+                </ul>
+            </div>
+        </div><!--  row -->
+    </div>
+</section>
+<section id="title" class="emerald">
+    <div class="container">
+      
+        @foreach (var list in Model)
+        {
+            <hr>
+         <div class="row">
+            <div class="col-sm-3">
+                <center> <img class="img-responsive img-thumbnail img-circle" id="set1122" src="~/images/Tpic/@list.imagename" alt="tutorimage" /></center>
+            </div>
+            <div class="col-sm-6">
+               <h4>@list.name</h4>
+                <h3>@list.sname</h3>
+                <h3>@list.skype</h3>
+                <h3>@list.email</h3>
+                <h3>@list.phone</h3>
+
+            </div>
+            <div class="col-sm-3">
+                @list.details
+            </div>
+        </div><!--  row -->
+            <hr>
+            
+        }
+
+
+    </div>
+</section><!--/#title-->  
